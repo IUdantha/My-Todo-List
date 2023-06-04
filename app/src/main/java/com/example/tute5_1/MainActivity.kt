@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val repository = TodoRepository(TodoDatabase.getInstance(this))
-        val recyclerView: RecyclerView = findViewById(R.id.rvTodoList)
+//        val recyclerView: RecyclerView = findViewById(R.id.rvTodoList)
+        val recyclerView = findViewById<RecyclerView>(R.id.rvTodoList)
         val ui = this
         val adapter = TodoAdapter()
         recyclerView.adapter = adapter

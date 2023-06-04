@@ -50,6 +50,12 @@ class TodoAdapter : RecyclerView.Adapter<TodoAdapter.ViewHolder>() {
     //This function assign values to view_item.xml file items
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.cbTodo.text = data[position].item
+        holder.cbTodo.setOnClickListener {
+            if (holder.cbTodo.isChecked)
+                holder.ivDelete.setImageResource(R.drawable.delete_icon_selected)
+            else
+                holder.ivDelete.setImageResource(R.drawable.ic_baseline_delete_forever_24)
+        }
         holder.ivDelete.setOnClickListener {
             if (holder.cbTodo.isChecked) {
                 val repository = TodoRepository(TodoDatabase.getInstance(context))
