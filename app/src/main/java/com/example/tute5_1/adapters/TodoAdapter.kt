@@ -50,6 +50,8 @@ class TodoAdapter : RecyclerView.Adapter<TodoAdapter.ViewHolder>() {
     //This function assign values to view_item.xml file items
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.cbTodo.text = data[position].item
+
+        //checked Todos delete button become red
         holder.cbTodo.setOnClickListener {
             if (holder.cbTodo.isChecked)
                 holder.ivDelete.setImageResource(R.drawable.delete_icon_selected)
